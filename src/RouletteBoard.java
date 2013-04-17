@@ -6,7 +6,7 @@ import javax.swing.*;
 
 public class RouletteBoard extends JApplet implements ActionListener
 {
-	private JButton one, two, three, four, five, six, seven,
+	private JButton zero, one, two, three, four, five, six, seven,
 		eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen, 
 		sixteen, seventeen, eighteen, nineteen, twenty, twentyOne,
 		twentyTwo, twentyThree, twentyFour, twentyFive, twentySix,
@@ -24,8 +24,13 @@ public class RouletteBoard extends JApplet implements ActionListener
 		Container board = getContentPane();
 		board.setBackground(Color.GREEN);
 		
-		guiBankroll = new JTextArea("Current Bankroll: $" + master.getBankroll());
+		guiBankroll = new JTextArea("Current Bankroll: $" + (master.bankroll + 1000));
 		
+		//set up buttons
+		zero = new JButton ("0");
+		zero.addActionListener(this);
+		zero.setBackground(Color.green);
+		zero.setForeground(Color.BLACK);
 		one = new JButton ("1");
 		one.addActionListener(this);
 		one.setBackground(Color.RED);
@@ -36,14 +41,24 @@ public class RouletteBoard extends JApplet implements ActionListener
 		two.addActionListener(this);
 		three = new JButton ("3");
 		three.addActionListener(this);
+		three.setBackground(Color.RED);
+		three.setForeground(Color.WHITE);
 		four = new JButton ("4");
 		four.addActionListener(this);
+		four.setBackground(Color.BLACK);
+		four.setForeground(Color.WHITE);
 		five = new JButton ("5");
 		five.addActionListener(this);
+		five.setBackground(Color.RED);
+		five.setForeground(Color.WHITE);
 		six = new JButton ("6");
 		six.addActionListener(this);
+		six.setBackground(Color.BLACK);
+		six.setForeground(Color.WHITE);
 		seven = new JButton ("7");
 		seven.addActionListener(this);
+		seven.setBackground(Color.BLACK);
+		seven.setForeground(Color.WHITE);
 		eight = new JButton ("8");
 		eight.addActionListener(this);
 		nine = new JButton ("9");
@@ -103,9 +118,35 @@ public class RouletteBoard extends JApplet implements ActionListener
 		thirtySix = new JButton ("36");
 		thirtySix.addActionListener(this);
 		
-		board.setLayout(new GridLayout());
-		board.add(one);
-		board.add(two);
+		board.setLayout(new GridBagLayout());
+		GridBagConstraints c = new GridBagConstraints();
+		
+		c.gridx = 0;
+		c.gridy = 0;
+		board.add(guiBankroll, c);
+		c.gridx = 0;
+		c.gridy= 1;
+		c.anchor = GridBagConstraints.EAST;
+		board.add(zero, c);
+		c.gridx = 1;
+		c.gridy = 2;		
+		board.add(one, c);
+		c.gridx = 1;
+		c.gridy = 1;
+		board.add(two, c);
+		c.gridx = 1;
+		c.gridy = 0;
+		board.add(three, c);
+		c.gridx = 2;
+		c.gridy = 2;
+		board.add(four, c);
+		c.gridx = 2;
+		c.gridy = 1;
+		board.add(five, c);
+		c.gridx = 2;
+		c.gridy = 0;
+		board.add(six, c);
+		
 		
 		
 	}
