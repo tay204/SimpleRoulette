@@ -1,7 +1,14 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
+
 import javax.swing.*;
+/**
+ * GUI interface for Roulette Board
+ * @author thyeo
+ * last update: 4/18/2013
+ */
 
 public class RouletteBoard extends JApplet implements ActionListener
 {
@@ -11,21 +18,20 @@ public class RouletteBoard extends JApplet implements ActionListener
 		twentyTwo, twentyThree, twentyFour, twentyFive, twentySix,
 		twentySeven, twentyEight, twentyNine, thirty, thirtyOne, 
 		thirtyTwo, thirtyThree, thirtyFour, thirtyFive, thirtySix,
-		black, red, newGame, addMoney; //playAgain; firstThird, secondThird, thirdThird, firstColumn, 
-//		secondColumn, thirdColumn, odd, even;
+		black, red, newGame, addMoney;
 	private JTextField betAmount;
 	private JTextArea guiBankroll, lastSpin;
 	
 	SimpleRouletteBets master = new SimpleRouletteBets();
+	DecimalFormat m = new DecimalFormat("##.00");
 	
 	public void init()
 	{
 		
-		
 		Container board = getContentPane();
 		board.setBackground(Color.GREEN);
 		
-		guiBankroll = new JTextArea("Current Bankroll: $" + master.bankroll);
+		guiBankroll = new JTextArea("Current Bankroll: $" + m.format(master.bankroll));
 		lastSpin = new JTextArea ("Last Spin: " + master.result);
 		
 		//set up buttons
@@ -338,14 +344,14 @@ public class RouletteBoard extends JApplet implements ActionListener
 		if (e.getActionCommand().equals("New Game"))
 		{
 			//set initial bankroll
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.startBankroll()));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.startBankroll()));
 			addMoney.setVisible(true);
 			newGame.setVisible(false);
 		}
 		if (e.getActionCommand().equals("Add Money"))
 		{
 			//add to bankroll
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.startBankroll()));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.startBankroll()));
 		}
 
 		
@@ -355,7 +361,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 0;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("1"))//bet on one
 		{
@@ -363,14 +369,14 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 1;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("2"))//bet on two
 		{
 			master.betAmount = Double.parseDouble(betAmount.getText()); 
 			master.finalBet = 2;				master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("3"))//bet on three
 		{
@@ -378,7 +384,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 3;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("4"))//bet on 4
 		{
@@ -386,7 +392,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 4;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("5"))//bet on 5
 		{
@@ -394,7 +400,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 5;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("6"))//bet on 6
 		{
@@ -402,7 +408,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 6;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("7"))//bet on 7
 		{
@@ -410,7 +416,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 7;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("8"))//bet on 8
 		{
@@ -418,7 +424,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 8;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("9"))//bet on 9
 		{
@@ -426,7 +432,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 9;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("10"))//bet on 10
 		{
@@ -434,7 +440,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 10;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("11"))//bet on 11
 		{
@@ -442,7 +448,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 11;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("12"))//bet on 12
 		{
@@ -450,7 +456,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 12;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("13"))//bet on 13
 		{
@@ -458,7 +464,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 13;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("14"))//bet on 14
 		{
@@ -466,7 +472,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 14;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("15"))//bet on 15
 		{
@@ -474,7 +480,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 15;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("16"))//bet on 16
 		{
@@ -482,7 +488,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 16;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("17"))//bet on 17
 		{
@@ -490,7 +496,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 17;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("18"))//bet on 18
 		{
@@ -498,7 +504,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 18;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("19"))//bet on 19
 		{
@@ -506,7 +512,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 19;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("20"))//bet on 20
 		{
@@ -514,7 +520,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 20;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("21"))//bet on 21
 		{
@@ -522,7 +528,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 21;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("22"))//bet on 22
 		{
@@ -530,7 +536,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 22;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("23"))//bet on 23
 		{
@@ -538,7 +544,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 23;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("24"))//bet on 24
 		{
@@ -546,7 +552,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 24;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("25"))//bet on 25
 		{
@@ -554,7 +560,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 25;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("26"))//bet on 26
 		{
@@ -562,7 +568,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 26;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("27"))//bet on 27
 		{
@@ -570,7 +576,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 27;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("28"))//bet on 28
 		{
@@ -578,7 +584,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 28;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("29"))//bet on 29
 		{
@@ -586,7 +592,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 29;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("30"))//bet on 30
 		{
@@ -594,7 +600,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 30;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("31"))//bet on 31
 		{
@@ -602,7 +608,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 31;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("32"))//bet on 32
 		{
@@ -610,7 +616,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 32;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("33"))//bet on 33
 		{
@@ -618,7 +624,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 33;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("34"))//bet on 34
 		{
@@ -626,7 +632,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 34;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("35"))//bet on 35
 		{
@@ -634,7 +640,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 35;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("36"))//bet on 36
 		{
@@ -642,7 +648,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 36;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("Black"))//bet on black
 		{
@@ -650,7 +656,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 37;//to match SimpleRouletteBets
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("Red"))//bet on red
 		{
@@ -658,7 +664,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.finalBet = 38;//to match SimpleRouletteBets
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals(null))
 		{
