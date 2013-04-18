@@ -339,9 +339,16 @@ public class RouletteBoard extends JApplet implements ActionListener
 			//show play again button
 //			playAgain.setVisible(true);
 		}
-//		while (master.bankroll == 0);
-
-		if (e.getActionCommand().equals("1"))//result is one
+		
+		if (e.getActionCommand().equals("0"))//bet on 0
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 0;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("1"))//bet on one
 		{
 			master.betAmount = Double.parseDouble(betAmount.getText());
 			master.finalBet = 1;
@@ -349,14 +356,14 @@ public class RouletteBoard extends JApplet implements ActionListener
 			lastSpin.setText("Last Spin: " + master.result);
 			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
 		}
-		else if (e.getActionCommand().equals("2"))//result is two
+		else if (e.getActionCommand().equals("2"))//bet on two
 		{
 			master.betAmount = Double.parseDouble(betAmount.getText()); 
 			master.finalBet = 2;				master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
 			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
 		}
-		else if (e.getActionCommand().equals("3"))//result is three
+		else if (e.getActionCommand().equals("3"))//bet on three
 		{
 			master.betAmount = Double.parseDouble(betAmount.getText());
 			master.finalBet = 3;
@@ -364,5 +371,292 @@ public class RouletteBoard extends JApplet implements ActionListener
 			lastSpin.setText("Last Spin: " + master.result);
 			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
 		}
+		else if (e.getActionCommand().equals("4"))//bet on 4
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 4;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("5"))//bet on 5
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 5;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("6"))//bet on 6
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 6;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("7"))//bet on 7
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 7;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("8"))//bet on 8
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 8;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("9"))//bet on 9
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 9;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("10"))//bet on 10
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 10;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("11"))//bet on 11
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 11;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("12"))//bet on 12
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 12;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("13"))//bet on 13
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 13;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("14"))//bet on 14
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 14;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("15"))//bet on 15
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 15;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("16"))//bet on 16
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 16;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("17"))//bet on 17
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 17;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("18"))//bet on 18
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 18;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("19"))//bet on 19
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 19;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("20"))//bet on 20
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 20;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("21"))//bet on 21
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 21;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("22"))//bet on 22
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 22;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("23"))//bet on 23
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 23;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("24"))//bet on 24
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 24;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("25"))//bet on 25
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 25;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("26"))//bet on 26
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 26;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("27"))//bet on 27
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 27;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("28"))//bet on 28
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 28;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("29"))//bet on 29
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 29;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("30"))//bet on 30
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 30;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("31"))//bet on 31
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 31;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("32"))//bet on 32
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 32;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("33"))//bet on 33
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 33;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("34"))//bet on 34
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 34;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("35"))//bet on 35
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 35;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("36"))//bet on 36
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 36;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("Black"))//bet on black
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 37;//to match SimpleRouletteBets
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("Red"))//bet on red
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 38;//to match SimpleRouletteBets
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else
+		{
+			System.err.println("Oops! An error occurred!");
+			System.exit(0);
+		}
+		
 	}		
+	
 }

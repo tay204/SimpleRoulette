@@ -1,11 +1,10 @@
-import javax.swing.JOptionPane;
-import java.text.DecimalFormat;
+//import java.text.DecimalFormat;
 
 /**
  * Basic program for Roulette Bets
- * Methods for each bet type and odds
+ * Methods for new game, making bets, spin wheel
  * @author yeotaJMU
- * 3/14/2013
+ * last update: 4/18/2013
  */
 public class SimpleRouletteBets 
 {
@@ -13,10 +12,9 @@ public class SimpleRouletteBets
 	public double betAmount;
 	public int result;
 	public int finalBet;
-//	private String makeBet, newBet;
 	
 	
-	DecimalFormat money = new DecimalFormat("##.00");
+//	DecimalFormat money = new DecimalFormat("##.00");
 	
 	//initialize bankroll
 	public double startBankroll ()
@@ -27,16 +25,18 @@ public class SimpleRouletteBets
 	//takes in bet from GUI
 	public void placeBet()
 	 {
-		 while (betAmount <= 0)
+		 if (betAmount <= 0)
 		 {
 			 System.err.println("You must bet a positive number!");
+			 System.exit(0);
 			 placeBet();
 		 }
-		 while (betAmount > bankroll)
+		 else if (betAmount > bankroll)
 		 {
 			 System.err.println("You can't bet more than you have!");
 			 placeBet();
 		 }
+		 else
 		 bankroll = bankroll - betAmount;
 		 spin();
 	 }
