@@ -28,7 +28,6 @@ public class SimpleRouletteBets
 		 if (betAmount <= 0)
 		 {
 			 System.err.println("You must bet a positive number!");
-			 System.exit(0);
 			 placeBet();
 		 }
 		 else if (betAmount > bankroll)

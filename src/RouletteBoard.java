@@ -11,7 +11,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 		twentyTwo, twentyThree, twentyFour, twentyFive, twentySix,
 		twentySeven, twentyEight, twentyNine, thirty, thirtyOne, 
 		thirtyTwo, thirtyThree, thirtyFour, thirtyFive, thirtySix,
-		black, red, newGame, playAgain; //firstThird, secondThird, thirdThird, firstColumn, 
+		black, red, newGame, addMoney; //playAgain; firstThird, secondThird, thirdThird, firstColumn, 
 //		secondColumn, thirdColumn, odd, even;
 	private JTextField betAmount;
 	private JTextArea guiBankroll, lastSpin;
@@ -189,8 +189,9 @@ public class RouletteBoard extends JApplet implements ActionListener
 		
 		newGame = new JButton ("New Game");
 		newGame.addActionListener(this);
-//		playAgain = new JButton ("Play Again");
-//		playAgain.addActionListener(this);
+		addMoney = new JButton ("Add Money");
+		addMoney.addActionListener(this);
+
 				
 		betAmount  = new JTextField("Enter Bet Amount");
 		
@@ -320,10 +321,12 @@ public class RouletteBoard extends JApplet implements ActionListener
 		c.gridwidth = 3;
 		c.fill = GridBagConstraints.HORIZONTAL;
 		board.add(newGame, c);
-//		c.gridx = 10;
-//		board.add (playAgain, c);
-//		playAgain.setVisible(false);
-	
+		c.gridx = 0;
+		c.gridy = 2;
+		c.gridwidth = 1;
+		board.add(addMoney, c);
+		addMoney.setVisible(false);
+
 		
 		
 	}
@@ -336,9 +339,15 @@ public class RouletteBoard extends JApplet implements ActionListener
 		{
 			//set initial bankroll
 			guiBankroll.setText("Current Bankroll $" + Double.toString(master.startBankroll()));
-			//show play again button
-//			playAgain.setVisible(true);
+			addMoney.setVisible(true);
+			newGame.setVisible(false);
 		}
+		if (e.getActionCommand().equals("Add Money"))
+		{
+			//add to bankroll
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.startBankroll()));
+		}
+
 		
 		if (e.getActionCommand().equals("0"))//bet on 0
 		{
@@ -651,7 +660,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			lastSpin.setText("Last Spin: " + master.result);
 			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
 		}
-		else
+		else if (e.getActionCommand().equals(null))
 		{
 			System.err.println("Oops! An error occurred!");
 			System.exit(0);
