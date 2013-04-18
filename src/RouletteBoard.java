@@ -14,7 +14,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 		black, red, newGame, playAgain; //firstThird, secondThird, thirdThird, firstColumn, 
 //		secondColumn, thirdColumn, odd, even;
 	private JTextField betAmount;
-	private JTextArea guiBankroll;
+	private JTextArea guiBankroll, lastSpin;
 	
 	SimpleRouletteBets master = new SimpleRouletteBets();
 	
@@ -26,6 +26,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 		board.setBackground(Color.GREEN);
 		
 		guiBankroll = new JTextArea("Current Bankroll: $" + master.bankroll);
+		lastSpin = new JTextArea ("Last Spin: " + master.result);
 		
 		//set up buttons
 		zero = new JButton ("0");
@@ -188,8 +189,8 @@ public class RouletteBoard extends JApplet implements ActionListener
 		
 		newGame = new JButton ("New Game");
 		newGame.addActionListener(this);
-		playAgain = new JButton ("Play Again");
-		playAgain.addActionListener(this);
+//		playAgain = new JButton ("Play Again");
+//		playAgain.addActionListener(this);
 				
 		betAmount  = new JTextField("Enter Bet Amount");
 		
@@ -201,6 +202,8 @@ public class RouletteBoard extends JApplet implements ActionListener
 		c.gridx = 0;
 		c.gridy = 0;
 		board.add(guiBankroll, c);
+		c.gridy = 5;
+		board.add(lastSpin, c);
 		c.gridx = 0;
 		c.gridy= 1;
 		c.anchor = GridBagConstraints.EAST;
@@ -317,9 +320,9 @@ public class RouletteBoard extends JApplet implements ActionListener
 		c.gridwidth = 3;
 		c.fill = GridBagConstraints.HORIZONTAL;
 		board.add(newGame, c);
-		c.gridx = 10;
-		board.add (playAgain, c);
-		playAgain.setVisible(false);
+//		c.gridx = 10;
+//		board.add (playAgain, c);
+//		playAgain.setVisible(false);
 	
 		
 		
@@ -332,10 +335,34 @@ public class RouletteBoard extends JApplet implements ActionListener
 		if (e.getActionCommand().equals("New Game"))
 		{
 			//set initial bankroll
-//			guiBankroll.setText("Current Bankroll $" + (master.getBankroll() + 1000));
 			guiBankroll.setText("Current Bankroll $" + Double.toString(master.startBankroll()));
-			
-			
+			//show play again button
+//			playAgain.setVisible(true);
 		}
-	}
+//		while (master.bankroll == 0);
+
+		if (e.getActionCommand().equals("1"))//result is one
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 1;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("2"))//result is two
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText()); 
+			master.finalBet = 2;				master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+		else if (e.getActionCommand().equals("3"))//result is three
+		{
+			master.betAmount = Double.parseDouble(betAmount.getText());
+			master.finalBet = 3;
+			master.placeBet();
+			lastSpin.setText("Last Spin: " + master.result);
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.bankroll));
+		}
+	}		
 }
