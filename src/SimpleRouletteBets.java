@@ -18,10 +18,11 @@ public class SimpleRouletteBets
 	
 	DecimalFormat money = new DecimalFormat("##.00");
 	
-	public void startBankroll ()
+	public double startBankroll ()
 	{
 		bankroll = (bankroll + 1000.00);
-		JOptionPane.showMessageDialog(null, "Your starting bankroll is $" + money.format(bankroll));
+		return bankroll;
+//		JOptionPane.showMessageDialog(null, "Your starting bankroll is $" + money.format(bankroll));
 	}
 	public void placeBet ()
 	{

@@ -1,7 +1,6 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.*;
 
 public class RouletteBoard extends JApplet implements ActionListener
@@ -12,19 +11,21 @@ public class RouletteBoard extends JApplet implements ActionListener
 		twentyTwo, twentyThree, twentyFour, twentyFive, twentySix,
 		twentySeven, twentyEight, twentyNine, thirty, thirtyOne, 
 		thirtyTwo, thirtyThree, thirtyFour, thirtyFive, thirtySix,
-		black, red; //firstThird, secondThird, thirdThird, firstColumn, 
+		black, red, newGame, playAgain; //firstThird, secondThird, thirdThird, firstColumn, 
 //		secondColumn, thirdColumn, odd, even;
 	private JTextField betAmount;
 	private JTextArea guiBankroll;
 	
+	SimpleRouletteBets master = new SimpleRouletteBets();
+	
 	public void init()
 	{
-		SimpleRouletteBets master = new SimpleRouletteBets();
+		
 		
 		Container board = getContentPane();
 		board.setBackground(Color.GREEN);
 		
-		guiBankroll = new JTextArea("Current Bankroll: $" + (master.bankroll + 1000));
+		guiBankroll = new JTextArea("Current Bankroll: $" + master.bankroll);
 		
 		//set up buttons
 		zero = new JButton ("0");
@@ -185,6 +186,11 @@ public class RouletteBoard extends JApplet implements ActionListener
 		red.setBackground(Color.RED);
 		red.setForeground(Color.WHITE);
 		
+		newGame = new JButton ("New Game");
+		newGame.addActionListener(this);
+		playAgain = new JButton ("Play Again");
+		playAgain.addActionListener(this);
+				
 		betAmount  = new JTextField("Enter Bet Amount");
 		
 		
@@ -304,14 +310,32 @@ public class RouletteBoard extends JApplet implements ActionListener
 		c.gridy = 3;
 		c.gridwidth = 1;
 		board.add(betAmount, c);
+		
+		//new game and play again
+		c.gridx = 1;
+		c.gridy = 5;
+		c.gridwidth = 3;
+		c.fill = GridBagConstraints.HORIZONTAL;
+		board.add(newGame, c);
+		c.gridx = 10;
+		board.add (playAgain, c);
+		playAgain.setVisible(false);
 	
 		
 		
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
-		
+	public void actionPerformed(ActionEvent e) 
+	{
+		//playing the game
+		if (e.getActionCommand().equals("New Game"))
+		{
+			//set initial bankroll
+//			guiBankroll.setText("Current Bankroll $" + (master.getBankroll() + 1000));
+			guiBankroll.setText("Current Bankroll $" + Double.toString(master.startBankroll()));
+			
+			
+		}
 	}
 }
