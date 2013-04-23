@@ -1,4 +1,4 @@
-
+import javax.swing.JOptionPane;
 
 
 /**
@@ -26,19 +26,20 @@ public class SimpleRouletteBets
 	 {
 		 if (betAmount <= 0)
 		 {
-			 System.err.println("You must bet a positive number!");
-			 System.exit(0);
-//			 placeBet();
+			JOptionPane.showMessageDialog(null, "You must bet a positive amount!");
+		
 		 }
+		
 		 else if (betAmount > bankroll)
 		 {
-			 System.err.println("You can't bet more than you have!");
-			 System.exit(0);
-//			 placeBet();
+			JOptionPane.showMessageDialog(null, "You can't bet more than you have!");
+
 		 }
 		 else
-		 bankroll = bankroll - betAmount;
-		 spin();
+		 {
+			 bankroll = bankroll - betAmount;
+			 spin();
+		 }
 	 }
 	//generate rand, calculate results of spin
 	 public void spin()

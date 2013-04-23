@@ -363,7 +363,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.betAmount = Double.parseDouble(betAmount.getText());			
 			} catch (NumberFormatException ex)
 			{
-				System.err.println("You must bet a number amount!");
+				JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
 			}
 			master.finalBet = 0;
 			master.placeBet();
