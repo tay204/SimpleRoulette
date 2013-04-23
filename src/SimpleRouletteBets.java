@@ -1,4 +1,5 @@
-//import java.text.DecimalFormat;
+
+
 
 /**
  * Basic program for Roulette Bets
@@ -14,8 +15,6 @@ public class SimpleRouletteBets
 	public int finalBet;
 	
 	
-//	DecimalFormat money = new DecimalFormat("##.00");
-	
 	//initialize bankroll
 	public double startBankroll ()
 	{
@@ -28,12 +27,14 @@ public class SimpleRouletteBets
 		 if (betAmount <= 0)
 		 {
 			 System.err.println("You must bet a positive number!");
-			 placeBet();
+			 System.exit(0);
+//			 placeBet();
 		 }
 		 else if (betAmount > bankroll)
 		 {
 			 System.err.println("You can't bet more than you have!");
-			 placeBet();
+			 System.exit(0);
+//			 placeBet();
 		 }
 		 else
 		 bankroll = bankroll - betAmount;

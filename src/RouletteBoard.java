@@ -2,6 +2,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
+import java.lang.*;
 
 import javax.swing.*;
 /**
@@ -24,6 +25,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 	
 	SimpleRouletteBets master = new SimpleRouletteBets();
 	DecimalFormat m = new DecimalFormat("##.00");
+	NumberFormatException ex = new NumberFormatException();
 	
 	public void init()
 	{
@@ -357,7 +359,12 @@ public class RouletteBoard extends JApplet implements ActionListener
 		
 		if (e.getActionCommand().equals("0"))//bet on 0
 		{
-			master.betAmount = Double.parseDouble(betAmount.getText());
+			try{
+			master.betAmount = Double.parseDouble(betAmount.getText());			
+			} catch (NumberFormatException ex)
+			{
+				System.err.println("You must bet a number amount!");
+			}
 			master.finalBet = 0;
 			master.placeBet();
 			lastSpin.setText("Last Spin: " + master.result);
