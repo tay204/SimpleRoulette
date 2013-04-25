@@ -1,3 +1,4 @@
+package roulette;
 import java.util.Scanner;
 
 
