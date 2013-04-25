@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="roulette.RouletteBoard" project="SimpleRoulette" 
     file="/SimpleRoulette/src/roulette/RouletteBoard.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="948" width="194" x="385" y="-294"/>    
+    <position height="948" width="253" x="479" y="-294"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
