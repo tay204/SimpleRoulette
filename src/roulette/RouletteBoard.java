@@ -20,13 +20,16 @@ public class RouletteBoard extends JApplet implements ActionListener
 		twentyTwo, twentyThree, twentyFour, twentyFive, twentySix,
 		twentySeven, twentyEight, twentyNine, thirty, thirtyOne, 
 		thirtyTwo, thirtyThree, thirtyFour, thirtyFive, thirtySix,
-		black, red, newGame, addMoney;
+		black, red, newGame, addMoney, saveScore;
 	private JTextField betAmount;
 	private JTextArea guiBankroll, lastSpin;
+	
 	
 	SimpleRouletteBets master = new SimpleRouletteBets();
 	DecimalFormat m = new DecimalFormat("##.00");
 	NumberFormatException ex = new NumberFormatException();
+	Storage save = new Storage();
+	RouletteWrite data = new RouletteWrite();
 	
 	public void init()
 	{
@@ -200,8 +203,9 @@ public class RouletteBoard extends JApplet implements ActionListener
 		newGame.addActionListener(this);
 		addMoney = new JButton ("Add Money");
 		addMoney.addActionListener(this);
-
-				
+		saveScore = new JButton ("Save Score");
+		saveScore.addActionListener(this);
+		
 		betAmount  = new JTextField("Enter Bet Amount");
 		
 		
@@ -324,7 +328,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 		c.gridwidth = 1;
 		board.add(betAmount, c);
 		
-		//new game and play again
+		//new game and play again and save
 		c.gridx = 1;
 		c.gridy = 5;
 		c.gridwidth = 3;
@@ -335,6 +339,11 @@ public class RouletteBoard extends JApplet implements ActionListener
 		c.gridwidth = 1;
 		board.add(addMoney, c);
 		addMoney.setVisible(false);
+		c.gridx = 10;
+		c.gridy = 5;
+		c.gridwidth = 3;
+		c.fill = GridBagConstraints.HORIZONTAL;
+		board.add(saveScore, c);
 
 		
 		
@@ -355,6 +364,15 @@ public class RouletteBoard extends JApplet implements ActionListener
 		{
 			//add to bankroll
 			guiBankroll.setText("Current Bankroll $" + m.format(master.startBankroll()));
+		}
+		
+		if (e.getActionCommand().equals("Save Score"))
+		{
+			//save score
+			master.playerName = JOptionPane.showInputDialog("Enter Player Name");
+			data.setName(master.playerName);
+			data.setBankroll(master.bankroll);
+			save.start(master.playerName);
 		}
 
 		

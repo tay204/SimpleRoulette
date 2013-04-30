@@ -14,6 +14,7 @@ public class SimpleRouletteBets
 	public double betAmount;
 	public int result;
 	public int finalBet;
+	public String playerName;
 	
 	
 	//initialize bankroll
@@ -130,6 +131,10 @@ public class SimpleRouletteBets
 		this.result = result;
 	}
 	
+	public String getPlayerName (String playerName)
+	{
+		return playerName;
+	}
 	
 	
 
