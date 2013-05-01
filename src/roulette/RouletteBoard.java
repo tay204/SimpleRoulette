@@ -8,8 +8,8 @@ import java.lang.*;
 import javax.swing.*;
 /**
  * GUI interface for Roulette Board
- * @author thyeo
- * last update: 4/18/2013
+ * Authors: Thomas Yeo and Nick Delgado
+ * last update: 4/30/2013
  */
 
 public class RouletteBoard extends JApplet implements ActionListener
@@ -24,12 +24,10 @@ public class RouletteBoard extends JApplet implements ActionListener
 	private JTextField betAmount;
 	private JTextArea guiBankroll, lastSpin;
 	
-	
+	//initialize constructors
 	SimpleRouletteBets master = new SimpleRouletteBets();
 	DecimalFormat m = new DecimalFormat("##.00");
 	NumberFormatException ex = new NumberFormatException();
-	Storage save = new Storage();
-	RouletteWrite data = new RouletteWrite();
 	
 	public void init()
 	{
@@ -357,8 +355,12 @@ public class RouletteBoard extends JApplet implements ActionListener
 		{
 			//set initial bankroll
 			guiBankroll.setText("Current Bankroll $" + m.format(master.startBankroll()));
-			addMoney.setVisible(true);
 			newGame.setVisible(false);
+			if (master.bankroll == 0)
+			{
+				addMoney.setVisible(true);
+			}else
+				addMoney.setVisible(false);
 		}
 		if (e.getActionCommand().equals("Add Money"))
 		{
@@ -369,53 +371,49 @@ public class RouletteBoard extends JApplet implements ActionListener
 		if (e.getActionCommand().equals("Save Score"))
 		{
 			//save score
-			master.playerName = JOptionPane.showInputDialog("Enter Player Name");
-			data.setName(master.playerName);
-			data.setBankroll(master.bankroll);
-			save.start();
+			master.saveOutput();
 		}
-
-		
 		if (e.getActionCommand().equals("0"))//bet on 0
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());	
+				master.finalBet = 0;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
-			{
-				JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
-			}
-			master.finalBet = 0;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
+				{
+					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
+				}
 		}
 		else if (e.getActionCommand().equals("1"))//bet on one
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());		
+				master.finalBet = 1;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
-				}
-			master.finalBet = 1;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
+				}			
 		}
 		else if (e.getActionCommand().equals("2"))//bet on two
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());	
+				master.finalBet = 2;				
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
 				}
-			master.finalBet = 2;				master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("3"))//bet on three
 		{

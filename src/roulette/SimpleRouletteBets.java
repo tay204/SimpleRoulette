@@ -1,4 +1,7 @@
 package roulette;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 
@@ -14,8 +17,9 @@ public class SimpleRouletteBets
 	public double betAmount;
 	public int result;
 	public int finalBet;
-	public String playerName;
+	public String playerName, output;
 	
+	DecimalFormat m = new DecimalFormat("##.00");
 	
 	//initialize bankroll
 	public double startBankroll ()
@@ -99,7 +103,26 @@ public class SimpleRouletteBets
 		 }
 	 }	
 
-	 
+	 public void saveOutput()
+	 {
+		 playerName = JOptionPane.showInputDialog("Enter Player Name");
+		 output = (playerName + ": $" + m.format(bankroll));
+		 try
+	       {
+	    	   FileWriter fw = new FileWriter("out.txt",true);
+	    	   BufferedWriter bw = new BufferedWriter(fw);
+	    	   bw.write(output);
+	    	   bw.newLine();
+	    	   bw.flush();
+	    	   bw.close();
+	       }
+	       catch(Exception e)
+	       {
+	           e.printStackTrace();
+	           System.out.println("error"+e.getMessage());
+	       }
+		 System.out.println("Save Complete!");
+	 }
 	 
 	//getters and setters
 	double getBetAmount() 
@@ -131,7 +154,7 @@ public class SimpleRouletteBets
 		this.result = result;
 	}
 	
-	public String getPlayerName (String playerName)
+	String getPlayerName ()
 	{
 		return playerName;
 	}
