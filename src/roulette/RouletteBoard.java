@@ -20,11 +20,11 @@ public class RouletteBoard extends JApplet implements ActionListener
 		twentyTwo, twentyThree, twentyFour, twentyFive, twentySix,
 		twentySeven, twentyEight, twentyNine, thirty, thirtyOne, 
 		thirtyTwo, thirtyThree, thirtyFour, thirtyFive, thirtySix,
-		black, red, newGame, addMoney, saveScore;
+		black, red, newGame, addMoney, saveScore, showScore;
 	private JTextField betAmount;
 	private JTextArea guiBankroll, lastSpin;
 	
-	//initialize constructors
+	//instantiate constructors
 	SimpleRouletteBets master = new SimpleRouletteBets();
 	DecimalFormat m = new DecimalFormat("##.00");
 	NumberFormatException ex = new NumberFormatException();
@@ -188,6 +188,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 		thirtySix.setBackground(Color.RED);
 		thirtySix.setForeground(Color.WHITE);
 		
+		//black and red buttons
 		black = new JButton ("Black");
 		black.addActionListener(this);
 		black.setBackground(Color.BLACK);
@@ -197,25 +198,28 @@ public class RouletteBoard extends JApplet implements ActionListener
 		red.setBackground(Color.RED);
 		red.setForeground(Color.WHITE);
 		
+		//misc buttons
 		newGame = new JButton ("New Game");
 		newGame.addActionListener(this);
 		addMoney = new JButton ("Add Money");
 		addMoney.addActionListener(this);
 		saveScore = new JButton ("Save Score");
 		saveScore.addActionListener(this);
+		showScore = new JButton ("Show Scores");
+		showScore.addActionListener(this);
 		
 		betAmount  = new JTextField("Enter Bet Amount");
 		
-		
+		//instantiate layout and format
 		board.setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		
-		//number buttons
+		//last spin button
 		c.gridx = 0;
 		c.gridy = 0;
-		board.add(guiBankroll, c);
-		c.gridy = 5;
 		board.add(lastSpin, c);
+		
+		//number buttons
 		c.gridx = 0;
 		c.gridy= 1;
 		c.anchor = GridBagConstraints.EAST;
@@ -320,28 +324,35 @@ public class RouletteBoard extends JApplet implements ActionListener
 		c.gridx= 7;
 		board.add(red, c);
 		
-		//bet amount
+		//bankroll and bet amount
+		c.gridx = 0;
+		c.gridy = 5;
+		c.gridwidth = 1;
+		c.fill = GridBagConstraints.HORIZONTAL;
+		board.add(betAmount, c);
 		c.gridx = 0;
 		c.gridy = 3;
 		c.gridwidth = 1;
-		board.add(betAmount, c);
+		board.add(guiBankroll, c);
 		
-		//new game and play again and save
-		c.gridx = 1;
-		c.gridy = 5;
-		c.gridwidth = 3;
+		//new game, play again, save and show scores
+		c.gridx = 0;
+		c.gridy = 6;
+		c.gridwidth = 1;
 		c.fill = GridBagConstraints.HORIZONTAL;
 		board.add(newGame, c);
-		c.gridx = 0;
-		c.gridy = 2;
-		c.gridwidth = 1;
+		c.gridx = 1;
+		c.gridy = 6;
+		c.gridwidth = 3;
 		board.add(addMoney, c);
 		addMoney.setVisible(false);
-		c.gridx = 10;
-		c.gridy = 5;
+		c.gridx = 7;
+		c.gridy = 6;
 		c.gridwidth = 3;
 		c.fill = GridBagConstraints.HORIZONTAL;
 		board.add(saveScore, c);
+		c.gridx = 10;
+		board.add(showScore, c);
 
 		
 		
@@ -367,7 +378,13 @@ public class RouletteBoard extends JApplet implements ActionListener
 		if (e.getActionCommand().equals("Save Score"))
 		{
 			//save score
-			master.saveOutput();
+			master.saveScore();
+		}
+		
+		if (e.getActionCommand().equals("Show Scores"))
+		{
+			//show scores
+			master.showScore();
 		}
 		if (e.getActionCommand().equals("0"))//bet on 0
 		{

@@ -1,5 +1,7 @@
 package roulette;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
@@ -109,7 +111,8 @@ public class SimpleRouletteBets
 		 }
 	 }	
 
-	 public void saveOutput()
+	 //method to save score
+	 public void saveScore()
 	 {
 		 playerName = JOptionPane.showInputDialog("Enter Player Name");
 		 output = (playerName + ": $" + m.format(bankroll)); // to make easy string output
@@ -125,9 +128,31 @@ public class SimpleRouletteBets
 	       catch(Exception e)
 	       {
 	           e.printStackTrace();
-	           System.out.println("error"+e.getMessage());
+	           JOptionPane.showMessageDialog(null,"Error"+e.getMessage());
 	       }
 		 JOptionPane.showMessageDialog(null, "Save Complete!");
+	 }
+	 //method to display scores
+	 public void showScore ()
+	 {
+		 try
+		 {
+			 FileReader fr = new FileReader("out.txt");
+			 BufferedReader br = new BufferedReader(fr);
+			 
+			 String line;
+			 
+			 while((line = br.readLine()) != null)
+			 {
+			     JOptionPane.showMessageDialog(null, line);
+			 }
+			 br.close();
+		 }
+		catch (Exception e)
+		{
+		 	e.printStackTrace();
+		 	JOptionPane.showMessageDialog(null,"Error"+e.getMessage());
+		}
 	 }
 	 
 	//getters and setters
