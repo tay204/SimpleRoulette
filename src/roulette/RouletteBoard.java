@@ -372,7 +372,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			master.playerName = JOptionPane.showInputDialog("Enter Player Name");
 			data.setName(master.playerName);
 			data.setBankroll(master.bankroll);
-			save.start(master.playerName);
+			save.start();
 		}
 
 		
