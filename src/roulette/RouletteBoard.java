@@ -356,11 +356,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			//set initial bankroll
 			guiBankroll.setText("Current Bankroll $" + m.format(master.startBankroll()));
 			newGame.setVisible(false);
-			if (master.bankroll == 0)
-			{
-				addMoney.setVisible(true);
-			}else
-				addMoney.setVisible(false);
+			addMoney.setVisible(true);
 		}
 		if (e.getActionCommand().equals("Add Money"))
 		{
@@ -419,505 +415,505 @@ public class RouletteBoard extends JApplet implements ActionListener
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());	
+				master.finalBet = 3;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
 				}
-			master.finalBet = 3;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("4"))//bet on 4
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());
+				master.finalBet = 4;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
 				}
-			master.finalBet = 4;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("5"))//bet on 5
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());	
+				master.finalBet = 5;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
-				}
-			master.finalBet = 5;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
+				}			
 		}
 		else if (e.getActionCommand().equals("6"))//bet on 6
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());	
+				master.finalBet = 6;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
-				}
-			master.finalBet = 6;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
+				}			
 		}
 		else if (e.getActionCommand().equals("7"))//bet on 7
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());
+				master.finalBet = 7;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
-				}
-			master.finalBet = 7;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
+				}		
 		}
 		else if (e.getActionCommand().equals("8"))//bet on 8
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());	
+				master.finalBet = 8;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
 				}
-			master.finalBet = 8;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("9"))//bet on 9
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());	
+				master.finalBet = 9;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
-				}
-			master.finalBet = 9;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
+				}			
 		}
 		else if (e.getActionCommand().equals("10"))//bet on 10
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());		
+				master.finalBet = 10;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
-				}
-			master.finalBet = 10;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
+				}			
 		}
 		else if (e.getActionCommand().equals("11"))//bet on 11
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());	
+				master.finalBet = 11;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
-				}
-			master.finalBet = 11;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
+				}			
 		}
 		else if (e.getActionCommand().equals("12"))//bet on 12
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());	
+				master.finalBet = 12;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
-				}
-			master.finalBet = 12;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
+				}			
 		}
 		else if (e.getActionCommand().equals("13"))//bet on 13
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());	
+				master.finalBet = 13;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
-				}
-			master.finalBet = 13;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
+				}			
 		}
 		else if (e.getActionCommand().equals("14"))//bet on 14
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());
+				master.finalBet = 14;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
-				}
-			master.finalBet = 14;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
+				}			
 		}
 		else if (e.getActionCommand().equals("15"))//bet on 15
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());	
+				master.finalBet = 15;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
-				}
-			master.finalBet = 15;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
+				}			
 		}
 		else if (e.getActionCommand().equals("16"))//bet on 16
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());
+				master.finalBet = 16;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
-				}
-			master.finalBet = 16;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
+				}			
 		}
 		else if (e.getActionCommand().equals("17"))//bet on 17
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());		
+				master.finalBet = 17;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
-				}
-			master.finalBet = 17;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
+				}			
 		}
 		else if (e.getActionCommand().equals("18"))//bet on 18
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());	
+				master.finalBet = 18;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
-				}
-			master.finalBet = 18;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
+				}			
 		}
 		else if (e.getActionCommand().equals("19"))//bet on 19
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());
+				master.finalBet = 19;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
-				}
-			master.finalBet = 19;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
+				}			
 		}
 		else if (e.getActionCommand().equals("20"))//bet on 20
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());	
+				master.finalBet = 20;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
-				}
-			master.finalBet = 20;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
+				}			
 		}
 		else if (e.getActionCommand().equals("21"))//bet on 21
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());
+				master.finalBet = 21;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
-				}
-			master.finalBet = 21;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
+				}			
 		}
 		else if (e.getActionCommand().equals("22"))//bet on 22
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());	
+				master.finalBet = 22;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
-				}
-			master.finalBet = 22;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
+				}			
 		}
 		else if (e.getActionCommand().equals("23"))//bet on 23
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());
+				master.finalBet = 23;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
-				}
-			master.finalBet = 23;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
+				}			
 		}
 		else if (e.getActionCommand().equals("24"))//bet on 24
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());
+				master.finalBet = 24;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
-				}
-			master.finalBet = 24;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
+				}			
 		}
 		else if (e.getActionCommand().equals("25"))//bet on 25
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());
+				master.finalBet = 25;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
-				}
-			master.finalBet = 25;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
+				}			
 		}
 		else if (e.getActionCommand().equals("26"))//bet on 26
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());
+				master.finalBet = 26;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
-				}
-			master.finalBet = 26;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
+				}			
 		}
 		else if (e.getActionCommand().equals("27"))//bet on 27
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());
+				master.finalBet = 27;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
-				}
-			master.finalBet = 27;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
+				}			
 		}
 		else if (e.getActionCommand().equals("28"))//bet on 28
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());
+				master.finalBet = 28;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
-				}
-			master.finalBet = 28;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
+				}			
 		}
 		else if (e.getActionCommand().equals("29"))//bet on 29
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());
+				master.finalBet = 29;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
 				}
-			master.finalBet = 29;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("30"))//bet on 30
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());
+				master.finalBet = 30;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
-				}
-			master.finalBet = 30;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
+				}			
 		}
 		else if (e.getActionCommand().equals("31"))//bet on 31
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());
+				master.finalBet = 31;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
-				}
-			master.finalBet = 31;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
+				}			
 		}
 		else if (e.getActionCommand().equals("32"))//bet on 32
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());	
+				master.finalBet = 32;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
 				}
-			master.finalBet = 32;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 		}
 		else if (e.getActionCommand().equals("33"))//bet on 33
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());	
+				master.finalBet = 33;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
-				}
-			master.finalBet = 33;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
+				}			
 		}
 		else if (e.getActionCommand().equals("34"))//bet on 34
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());
+				master.finalBet = 34;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
-				}
-			master.finalBet = 34;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
+				}			
 		}
 		else if (e.getActionCommand().equals("35"))//bet on 35
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());
+				master.finalBet = 35;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
-				}
-			master.finalBet = 35;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
+				}			
 		}
 		else if (e.getActionCommand().equals("36"))//bet on 36
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());	
+				master.finalBet = 36;
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
-				}
-			master.finalBet = 36;
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
+				}			
 		}
 		else if (e.getActionCommand().equals("Black"))//bet on black
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());		
+				master.finalBet = 37;//to match SimpleRouletteBets
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
-				}
-			master.finalBet = 37;//to match SimpleRouletteBets
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
+				}			
 		}
 		else if (e.getActionCommand().equals("Red"))//bet on red
 		{
 			try
 			{
-				master.betAmount = Double.parseDouble(betAmount.getText());			
+				master.betAmount = Double.parseDouble(betAmount.getText());
+				master.finalBet = 38;//to match SimpleRouletteBets
+				master.placeBet();
+				lastSpin.setText("Last Spin: " + master.result);
+				guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
 			} catch (NumberFormatException ex)
 				{
 					JOptionPane.showMessageDialog(null, "You have to bet a number amount!");
-				}
-			master.finalBet = 38;//to match SimpleRouletteBets
-			master.placeBet();
-			lastSpin.setText("Last Spin: " + master.result);
-			guiBankroll.setText("Current Bankroll $" + m.format(master.bankroll));
+				}			
 		}
 		else if (e.getActionCommand().equals(null))
 		{

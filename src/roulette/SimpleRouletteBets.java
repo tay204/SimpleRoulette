@@ -7,9 +7,9 @@ import javax.swing.JOptionPane;
 
 /**
  * Basic program for Roulette Bets
- * Methods for new game, making bets, spin wheel
- * @author yeotaJMU
- * last update: 4/18/2013
+ * Methods for new game, making bets, spin wheel, save score
+ * Authors: Thomas Yeo and Nick Delgado
+ * last update: 4/30/2013
  */
 public class SimpleRouletteBets 
 {
@@ -56,9 +56,11 @@ public class SimpleRouletteBets
 			 if (result == finalBet)
 			 {
 				 bankroll = bankroll + (betAmount + (35 * betAmount));
+				 JOptionPane.showMessageDialog(null, "You win $" + m.format(betAmount *35) + "!");
 			 }
 			 else
 			 {
+				 JOptionPane.showMessageDialog(null, "You lost $" + m.format(betAmount) + "!");
 				 bankroll = bankroll;
 			 }	 
 		 }
@@ -79,10 +81,12 @@ public class SimpleRouletteBets
 					||(result==22)||(result==24)||(result==26)||(result==28)||(result==29)
 					||(result==31)||(result==33)||(result==35))
 			{
+			 	JOptionPane.showMessageDialog(null, "You win $" + m.format(betAmount) + "!");
 				bankroll = bankroll + (betAmount*2);
 			}
 			else
 			{
+				JOptionPane.showMessageDialog(null, "You lost $" + m.format(betAmount) + "!");
 				bankroll = bankroll;
 			}			
 		 
@@ -95,10 +99,12 @@ public class SimpleRouletteBets
 					||(result==21)||(result==23)||(result==25)||(result==27)||(result==30)
 					||(result==32)||(result==34)||(result==36))
 		 {
+			 JOptionPane.showMessageDialog(null, "You win $" + m.format(betAmount) + "!");
 			 bankroll = bankroll + (betAmount * 2);
 		 }
 		 else
 		 {
+			 JOptionPane.showMessageDialog(null, "You lost $" + m.format(betAmount) + "!");
 			 bankroll = bankroll;
 		 }
 	 }	
@@ -106,14 +112,14 @@ public class SimpleRouletteBets
 	 public void saveOutput()
 	 {
 		 playerName = JOptionPane.showInputDialog("Enter Player Name");
-		 output = (playerName + ": $" + m.format(bankroll));
+		 output = (playerName + ": $" + m.format(bankroll)); // to make easy string output
 		 try
 	       {
 	    	   FileWriter fw = new FileWriter("out.txt",true);
 	    	   BufferedWriter bw = new BufferedWriter(fw);
-	    	   bw.write(output);
+	    	   bw.write(output); //write output to txt file
 	    	   bw.newLine();
-	    	   bw.flush();
+	    	   bw.flush(); 
 	    	   bw.close();
 	       }
 	       catch(Exception e)
@@ -121,7 +127,7 @@ public class SimpleRouletteBets
 	           e.printStackTrace();
 	           System.out.println("error"+e.getMessage());
 	       }
-		 System.out.println("Save Complete!");
+		 JOptionPane.showMessageDialog(null, "Save Complete!");
 	 }
 	 
 	//getters and setters

@@ -3,7 +3,7 @@
   associations="true" dependencies="false" nesting-relationships="true">  
   <class id="1" language="java" name="roulette.SimpleRouletteBets" project="SimpleRoulette" 
     file="/SimpleRoulette/src/roulette/SimpleRouletteBets.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="369" width="271" x="78" y="-280"/>    
+    <position height="460" width="271" x="87" y="-284"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
@@ -21,7 +21,7 @@
   </class>  
   <class id="3" language="java" name="roulette.RouletteTest" project="SimpleRoulette" 
     file="/SimpleRoulette/src/roulette/RouletteTest.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="102" width="113" x="126" y="130"/>    
+    <position height="102" width="113" x="143" y="230"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
