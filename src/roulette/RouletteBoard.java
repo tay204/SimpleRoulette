@@ -9,7 +9,7 @@ import javax.swing.*;
 /**
  * GUI interface for Roulette Board
  * Authors: Thomas Yeo and Nick Delgado
- * last update: 4/30/2013
+ * last update: 5/2/2013
  */
 
 public class RouletteBoard extends JApplet implements ActionListener
@@ -351,6 +351,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 		c.gridwidth = 3;
 		c.fill = GridBagConstraints.HORIZONTAL;
 		board.add(saveScore, c);
+		saveScore.setVisible(false);
 		c.gridx = 10;
 		board.add(showScore, c);
 
@@ -368,6 +369,7 @@ public class RouletteBoard extends JApplet implements ActionListener
 			guiBankroll.setText("Current Bankroll $" + m.format(master.startBankroll()));
 			newGame.setVisible(false);
 			addMoney.setVisible(true);
+			saveScore.setVisible(true);
 		}
 		if (e.getActionCommand().equals("Add Money"))
 		{
