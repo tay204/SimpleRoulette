@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 /**
  * Basic program for Roulette Bets
  * Methods for new game, making bets, spin wheel, save score
- * Authors: Thomas Yeo and Nick Delgado
+ * Authors: Thomas Yeo
  * last update: 4/30/2013
  */
 public class SimpleRouletteBets 
